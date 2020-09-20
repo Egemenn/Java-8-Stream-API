@@ -31,6 +31,14 @@ public class Main {
         System.out.println();
 
 
+        //integer stream - range, sum
+        System.out.println(
+        IntStream
+                .range(1,5)
+                .sum());
+        System.out.println();
+
+
 
     }
 }
