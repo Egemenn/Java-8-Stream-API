@@ -39,6 +39,14 @@ public class Main {
         System.out.println();
 
 
+        //stream - sorted, findFirst, ifPresent
+        Stream.of("Ava", "Aneri", "Alberto")
+                .sorted()
+                .findFirst()
+                .ifPresent(System.out::println);
+        System.out.println();
+
+
 
     }
 }
