@@ -47,6 +47,15 @@ public class Main {
         System.out.println();
 
 
+        //stream - filter, sorted
+        String names[]={"Al", "Ankit", "Kushal", "Brent", "Sarika", "Amanda", "Shivika"};
+        Arrays.stream(names)
+                .filter(x -> x.startsWith("S"))
+                .sorted()
+                .forEach(System.out::println);
+        System.out.println();
+
+
 
     }
 }
