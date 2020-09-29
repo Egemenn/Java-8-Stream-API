@@ -63,6 +63,24 @@ public class Main {
                 .ifPresent(System.out::println);
         System.out.println();
 
+        //stream - map, filter
+        List<String> people = Arrays.asList("Al", "Ankit", "Kushal", "Brent", "Sarika", "Amanda", "Shivika");
+        people
+                .stream()
+                .map(String::toLowerCase)
+                .filter(x -> x.startsWith("a"))
+                .forEach(System.out::println);
+        System.out.println();
+
+
+        //stream - sorted, filter,
+        Stream<String> bands = Files.lines(Paths.get("C:\\Users\\10011176\\Desktop\\Java8StreamExamples\\bands.txt"));
+        bands
+                .sorted()
+                .filter(x -> x.length()>13)
+                .forEach(System.out::println);
+        bands.close();
+        System.out.println();
 
 
 
