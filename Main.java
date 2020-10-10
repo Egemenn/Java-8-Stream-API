@@ -83,6 +83,35 @@ public class Main {
         System.out.println();
 
 
+        //Files. filter, collect
+        List<String> bands2 = Files.lines(Paths.get("C:\\Users\\10011176\\Desktop\\Java8StreamExamples\\bands.txt"))
+                .filter(x -> x.contains("jit"))
+                .collect(Collectors.toList());
+        bands2.forEach(x -> System.out.println(x));
+
+
+        //stream, Files - map, filter, count
+        Stream<String> rows1 = Files.lines(Paths.get("C:\\Users\\10011176\\Desktop\\Java8StreamExamples\\data.txt"));
+        int rowCount = (int)rows1
+                .map(x -> x.split(","))
+                .filter(x -> x.length == 3)
+                .count();
+        System.out.println(rowCount + " rows.");
+        rows1.close();
+        System.out.println();
+
+
+        //stream, Files
+        Stream<String> rows2 = Files.lines(Paths.get("C:\\Users\\10011176\\Desktop\\Java8StreamExamples\\data.txt"));
+        rows2
+                .map(x -> x.split(","))
+                .filter(x -> x.length == 3)
+                .filter(x -> Integer.parseInt(x[1]) > 15)
+                .forEach(x -> System.out.println(x[0] + " " + x[1] + " " + x[2]));
+        rows2.close();
+        System.out.println();
+
+
 
     }
 }
